@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Aniversário, Meu Amor!</title>
+    <title>Feliz 1 ano!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
@@ -13,13 +13,13 @@
 </head>
 
 <body>
-    <!-- Navegação -->
-    <nav>
+    <div class="stars" id="stars"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <a href="/" style="text-decoration: none;">
-                    Para Vc
-                </a>
+                <a href="#hero">Para Vc 💕</a>
             </div>
             <div class="menu-toggle" id="menu-toggle">
                 <span></span>
@@ -27,60 +27,64 @@
                 <span></span>
             </div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#hero">Início</a></li>
-                <li><a href="#about">Sobre Você</a></li>
-                <li><a href="#gallery">Fotos</a></li>
-                <li><a href="#message">Carta</a></li>
+                <li><a href="#hero" class="nav-link">Início</a></li>
+                <li><a href="#about" class="nav-link">Sobre Você</a></li>
+                <li><a href="#gallery" class="nav-link">Fotos</a></li>
+                <li><a href="#message" class="nav-link">Carta</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Seção Hero -->
+    <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="container">
-            <h1 class="fade-in">Feliz 1 ano, gatita!</h1>
-            <p class="fade-in">teste</p>
-            <a href="#about" class="btn fade-in">Próximo</a>
-        </div>
         <div class="hearts" id="hearts"></div>
+        <div class="container">
+            <h1 class="fade-in">Feliz 1 Ano, gatita! 🎉</h1>
+            <p class="fade-in">Espero que você goste desse 'presente', que é simples, mas de coração.
+            </p>
+            <p class="fade-in">(eu tentei hehe...)</p>
+            <a href="#about" class="btn fade-in">Começar 💝</a>
+        </div>
     </section>
 
-    <!-- Seção Sobre -->
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="fade-in">Sobre Você</h2>
-            <p class="fade-in">texto</p>
-            <p class="fade-in">texto</p>
-            <a href="#gallery" class="btn fade-in">Próximo</a>
+            <h2 class="fade-in">Sobre Nataly</h2>
+            <p class="fade-in">Seus olhos brilham mais que todas as estrelas do céu, e seu sorriso tem o poder de
+                transformar qualquer dia nublado em sol</p>
+            <p class="fade-in">Você é a pessoa mais incrível que já conheci, e cada momento ao seu lado é um presente
+                que guardo com todo carinho no coração</p>
+            <a href="#gallery" class="btn fade-in">Nossas memórias 📸</a>
         </div>
     </section>
 
-    <!-- Seção Galeria -->
+    <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
-            <h2 class="fade-in">Fotinhos</h2>
-            <p class="fade-in">texto</p>
+            <h2 class="fade-in">Nossos Momentos</h2>
+            <p class="fade-in">Cada foto conta um pedacinho da nossa história de amor</p>
 
             <div class="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                            alt="Momento especial 1">
-                        <div class="carousel-caption">texto</div>
+                        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                            alt="Momento especial">
+                        <div class="carousel-caption">Nosso primeiro encontro 💕</div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1516487106395-f3d756f6a367?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                            alt="Momento especial 2">
-                        <div class="carousel-caption">texto</div>
+                        <img src="https://images.unsplash.com/photo-1516487106395-f3d756f6a367?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                            alt="Momento especial">
+                        <div class="carousel-caption">Aquele dia perfeito 🌅</div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                            alt="Momento especial 3">
-                        <div class="carousel-caption">texto</div>
+                        <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                            alt="Momento especial">
+                        <div class="carousel-caption">Nosso lugar favorito ✨</div>
                     </div>
                 </div>
-                <button class="carousel-control prev">&lt;</button>
-                <button class="carousel-control next">&gt;</button>
+                <button class="carousel-control prev" aria-label="Anterior">‹</button>
+                <button class="carousel-control next" aria-label="Próximo">›</button>
                 <div class="carousel-indicators">
                     <span class="indicator active"></span>
                     <span class="indicator"></span>
@@ -88,35 +92,43 @@
                 </div>
             </div>
 
-            <a href="#message" class="btn fade-in">Próximo</a>
+            <a href="#message" class="btn fade-in">Ler carta 💌</a>
         </div>
     </section>
 
-    <!-- Seção Mensagem -->
+    <!-- Letter Section -->
     <section id="message" class="message">
         <div class="container">
-            <h2 class="fade-in">Carta</h2>
-            <p class="fade-in">texto</p>
+            <h2 class="fade-in">Uma Carta Para Você</h2>
+            <p class="fade-in">(pra não perder o costume...)</p>
 
             <div class="letter-container">
-                <button id="letter-btn" class="btn">Abrir</button>
+                <button id="letter-btn" class="btn">Abrir Carta 💌</button>
                 <div class="letter" id="letter">
-                    <p>texto</p>
-                    <p>texto</p>
-                    <p>texto</p>
-                    <p>texto</p>
-                    <p>texto</p>
-                    <p>texto</p>
-                    <p class="letter-signature">texto<br>Seu namorado</p>
+                    <p>Meu amor,</p>
+                    <p>Hoje, no nosso aniversário, quero que você saiba o quanto é especial para mim. Cada dia ao seu lado
+                        é uma bênção, cada sorriso seu ilumina minha vida, cada abraço seu é meu lugar favorito no
+                        mundo.</p>
+                    <p>Você chegou e transformou completamente minha vida, dando cor aos meus dias e sentido aos meus
+                        sonhos. Seu jeito único de ser, sua bondade, seu carinho - tudo em você me encanta e me faz
+                        querer ser uma pessoa melhor.</p>
+                    <p>Que este novo ano de vida seja repleto de alegrias, realizações e muito amor. Que possamos
+                        continuar construindo juntos essa linda história, compartilhando sonhos, superando desafios e
+                        celebrando cada conquista.</p>
+                    <p>Prometo estar ao seu lado sempre, te apoiar em tudo, te fazer sorrir todos os dias e te amar
+                        incondicionalmente. Você é o amor da minha vida, minha melhor amiga, minha companheira, minha
+                        tudo.</p>
+                    <p>Feliz aniversário, meu amor! Que venham muitos e muitos anos pela frente, sempre juntos.</p>
+                    <p class="letter-signature">Com todo meu amor,<br>Seu digdin 💕</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer w/ counter -->
     <footer>
         <div class="time-together">
             <h3>Tempo te aguentando</h3>
-            <p>texto</p>
             <div class="counter">
                 <div class="counter-item">
                     <div class="counter-value" id="years">0</div>
@@ -145,41 +157,145 @@
             </div>
         </div>
 
-        <hr style="margin: 3rem 0;">
-
-        <div style="margin: 3rem 0; text-align: center;">
-            <i>Feito pelo seu digdin :)</i>
+        <div style="margin-top: 3rem; margin-bottom: 5rem; font-family: 'Dancing Script', cursive; font-size: 1.5rem;">
+            <i>Feito com todo amor do mundo pelo seu digdin 💕</i>
         </div>
     </footer>
 
-    <!-- Player de Música -->
+    <!-- Music Player -->
     <div class="music-player">
-        <div class="player-controls">
-            <button class="player-btn prev-btn"><i class="fas fa-step-backward"></i></button>
-            <button class="player-btn play-pause-btn"><i class="fas fa-play"></i></button>
-            <button class="player-btn next-btn"><i class="fas fa-step-forward"></i></button>
-            <div class="progress-container">
-                <div class="progress-bar"></div>
+        <div class="music-info">
+            <div class="music-thumbnail">
+                <img style="width: 64px; height: 64px;" src="/assets/img/eastside-thumb.png" alt="Capa da Música" id="current-thumbnail">
+                <div class="music-thumbnail-overlay">
+                    <i class="fas fa-music"></i>
+                </div>
             </div>
-            <span class="time current-time">0:00</span>
-            <span class="time">/</span>
-            <span class="time total-time">0:00</span>
+            <div class="music-details">
+                <div class="music-title" id="current-title">Eastside</div>
+                <div class="music-artist" id="current-artist">Benny Blanco, Halsey & Khalid</div>
+            </div>
         </div>
-        <div class="volume-container">
-            <button class="player-btn volume-btn"><i class="fas fa-volume-up"></i></button>
-            <input type="range" class="volume-slider" min="0" max="100" value="50">
+        <div class="player-main">
+            <div class="player-controls">
+                <button class="player-btn prev-btn" aria-label="Anterior"><i class="fas fa-step-backward"></i></button>
+                <button class="player-btn play-pause-btn" aria-label="Play/Pause"><i class="fas fa-play"></i></button>
+                <button class="player-btn next-btn" aria-label="Próximo"><i class="fas fa-step-forward"></i></button>
+            </div>
+            
+            <div class="progress-area">
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="time-display">
+                    <span class="time current-time">0:00</span>
+                    <span class="time">/</span>
+                    <span class="time total-time">0:00</span>
+                </div>
+            </div>
+
+            <div class="volume-container">
+                <button class="player-btn volume-btn" aria-label="Volume"><i class="fas fa-volume-up"></i></button>
+                <input type="range" class="volume-slider" min="0" max="100" value="50" aria-label="Controle de volume">
+            </div>
         </div>
     </div>
 
     <script>
+        // Create animated stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+                star.style.animationDelay = Math.random() * 5 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Create animated hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.setProperty('--duration', (Math.random() * 10 + 10) + 's');
+                heart.style.animationDelay = Math.random() * 10 + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        // Create confettis
+        function createConfetti() {
+            const colors = ['#ff4d6d', '#ff8aa1', '#ffb3c6', '#ffe5ec', '#ffffff'];
+
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]);
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.width = (Math.random() * 10 + 5) + 'px';
+                confetti.style.height = (Math.random() * 10 + 5) + 'px';
+                confetti.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+
+        // Mobile menu
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
+        const navLinksItems = document.querySelectorAll('.nav-link');
 
         menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
 
-        // Navegação suave
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Activate navigation link based on scroll
+        function updateActiveLink() {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    navLinksItems.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        // Smooth navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -193,7 +309,7 @@
             });
         });
 
-        // Efeito de scroll na navegação
+        // Scroll effect on navigation
         window.addEventListener('scroll', function () {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
@@ -201,9 +317,10 @@
             } else {
                 nav.classList.remove('scrolled');
             }
+            updateActiveLink();
         });
 
-        // Animação de entrada das seções
+        // Fade-in animations on sections
         const fadeElements = document.querySelectorAll('.fade-in');
 
         const fadeInObserver = new IntersectionObserver((entries) => {
@@ -212,13 +329,13 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         fadeElements.forEach(element => {
             fadeInObserver.observe(element);
         });
 
-        // Carrossel de fotos
+        // Carousel
         const carouselInner = document.querySelector('.carousel-inner');
         const carouselItems = document.querySelectorAll('.carousel-item');
         const prevBtn = document.querySelector('.carousel-control.prev');
@@ -227,6 +344,7 @@
 
         let currentIndex = 0;
         const totalItems = carouselItems.length;
+        let autoPlayInterval;
 
         function updateCarousel() {
             carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -240,131 +358,283 @@
             });
         }
 
-        prevBtn.addEventListener('click', () => {
+        function nextSlide() {
+            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        }
+
+        function prevSlide() {
             currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
             updateCarousel();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoPlay();
         });
 
         nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
+            nextSlide();
+            resetAutoPlay();
         });
 
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => {
                 currentIndex = index;
                 updateCarousel();
+                resetAutoPlay();
             });
         });
 
-        // Auto-avanço do carrossel
-        setInterval(() => {
-            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
-        }, 5000);
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
 
-        // Carta
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        startAutoPlay();
+
+        // Letter
         const letterBtn = document.getElementById('letter-btn');
         const letter = document.getElementById('letter');
 
         letterBtn.addEventListener('click', () => {
             letter.classList.toggle('show');
-            letterBtn.textContent = letter.classList.contains('show') ? 'Fechar Carta' : 'Abrir Carta';
+            letterBtn.textContent = letter.classList.contains('show') ? 'Fechar Carta 💕' : 'Abrir Carta 💌';
 
-            // Efeito de confete ao abrir a carta
             if (letter.classList.contains('show')) {
                 createConfetti();
             }
         });
 
-        // Player de música
-        const audio = new Audio();
-        // Substitua pela URL da música que deseja usar
-        audio.src = '/assets/sounds/eastside-benny-blanco.mp3';
+        // Music Player
+        const playlist = [
+            {
+                id: 1,
+                title: "Eastside",
+                artist: "Benny Blanco, Halsey & Khalid",
+                src: "/assets/sounds/eastside-benny-blanco.mp3",
+                thumbnail: "/assets/img/eastside-thumb.png"
+            },
+            {
+                id: 2,
+                title: "2-Much",
+                artist: "Justin Bieber",
+                src: "/assets/sounds/2-much-justin-bieber.mp3",
+                thumbnail: "/assets/img/2-much-thumb.png"
+            }
+        ]
 
+        const audio = new Audio();
+
+        const musicPlayer = document.querySelector('.music-player');
         const playPauseBtn = document.querySelector('.play-pause-btn');
-        const prevBtnPlayer = document.querySelector('.prev-btn');
-        const nextBtnPlayer = document.querySelector('.next-btn');
+        const prevBtnMusic = document.querySelector('.prev-btn');
+        const nextBtnMusic = document.querySelector('.next-btn');
         const progressBar = document.querySelector('.progress-bar');
         const progressContainer = document.querySelector('.progress-container');
         const currentTimeEl = document.querySelector('.current-time');
         const totalTimeEl = document.querySelector('.total-time');
         const volumeBtn = document.querySelector('.volume-btn');
         const volumeSlider = document.querySelector('.volume-slider');
+        const currentThumbnail = document.getElementById('current-thumbnail');
+        const currentTitle = document.getElementById('current-title');
+        const currentArtist = document.getElementById('current-artist');
 
+        // Control variables
+        let currentSongIndex = 0;
         let isPlaying = false;
+        let isAudioReady = false;
+        let isShuffled = false;
+        let repeatMode = 'none'; // 'none', 'one', 'all'
+
+        // Load song
+        function loadSong(index) {
+            const song = playlist[index];
+            if (!song) return;
+            
+            audio.src = song.src;
+            currentTitle.textContent = song.title;
+            currentArtist.textContent = song.artist;
+            currentThumbnail.src = song.thumbnail;
+            currentThumbnail.alt = `Capa da música ${song.title}`;
+            
+            // Reset progress
+            progressBar.style.width = '0%';
+            currentTimeEl.textContent = '0:00';
+            totalTimeEl.textContent = '0:00';
+            
+            // Pre-load the song
+            audio.load();
+        }
+
+        // Play song
+        function playSong() {
+            if (!audio.src) return;
+            
+            audio.play()
+                .then(() => {
+                    isPlaying = true;
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    musicPlayer.classList.add('playing');
+                })
+                .catch(error => {
+                    console.log('Erro ao tocar:', error);
+                    isPlaying = false;
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    musicPlayer.classList.remove('playing');
+                });
+        }
+
+        // Pause song
+        function pauseSong() {
+            audio.pause();
+            isPlaying = false;
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            musicPlayer.classList.remove('playing');
+        }
 
         function togglePlayPause() {
             if (isPlaying) {
-                audio.pause();
-                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                pauseSong();
             } else {
-                audio.play();
-                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                playSong();
             }
-            isPlaying = !isPlaying;
+        }
+
+        // Next song
+        function nextSong() {
+            if (repeatMode === 'one') {
+                audio.currentTime = 0;
+                if (isPlaying) playSong();
+            } else {
+                if (isShuffled) {
+                    let randomIndex;
+                    do {
+                        randomIndex = Math.floor(Math.random() * playlist.length);
+                    } while (randomIndex === currentSongIndex && playlist.length > 1);
+                    currentSongIndex = randomIndex;
+                } else {
+                    currentSongIndex = (currentSongIndex + 1) % playlist.length;
+                }
+                loadSong(currentSongIndex);
+                if (isPlaying) playSong();
+            }
+        }
+
+        // Previous song
+        function prevSong() {
+            if (audio.currentTime > 3) {
+                audio.currentTime = 0;
+                if (isPlaying) playSong();
+            } else {
+                currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+                loadSong(currentSongIndex);
+                if (isPlaying) playSong();
+            }
+        }
+
+        // Format time
+        function formatTime(seconds) {
+            if (isNaN(seconds) || !isFinite(seconds)) return '0:00';
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
         }
 
         playPauseBtn.addEventListener('click', togglePlayPause);
 
-        // Atualizar barra de progresso
+        prevBtnMusic.addEventListener('click', prevSong);
+
+        nextBtnMusic.addEventListener('click', nextSong);
+
+        // Update progress bar
         audio.addEventListener('timeupdate', () => {
-            const currentTime = audio.currentTime;
-            const duration = audio.duration;
-            const progressPercent = (currentTime / duration) * 100;
-            progressBar.style.width = `${progressPercent}%`;
-
-            // Atualizar tempos
-            currentTimeEl.textContent = formatTime(currentTime);
-            totalTimeEl.textContent = formatTime(duration);
+            if (audio.duration) {
+                const progressPercent = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+                currentTimeEl.textContent = formatTime(audio.currentTime);
+            }
         });
 
-        // Clique na barra de progresso para pular
+         // When the music loads
+        audio.addEventListener('loadedmetadata', () => {
+            totalTimeEl.textContent = formatTime(audio.duration);
+            isAudioReady = true;
+        });
+
+        // Click on progress bar
         progressContainer.addEventListener('click', (e) => {
-            const width = progressContainer.clientWidth;
-            const clickX = e.offsetX;
+            const rect = progressContainer.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
             const duration = audio.duration;
-
-            audio.currentTime = (clickX / width) * duration;
+            
+            if (duration && width > 0) {
+                audio.currentTime = (clickX / width) * duration;
+            }
         });
 
-        // Controle de volume
+        // Volume controller
         volumeSlider.addEventListener('input', () => {
-            audio.volume = volumeSlider.value / 100;
-
-            // Atualizar ícone do volume
-            if (audio.volume === 0) {
+            const volume = volumeSlider.value / 100;
+            audio.volume = volume;
+            
+            if (volume === 0) {
                 volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-            } else if (audio.volume < 0.5) {
+            } else if (volume < 0.5) {
                 volumeBtn.innerHTML = '<i class="fas fa-volume-down"></i>';
             } else {
                 volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
             }
         });
 
-        // Formatar tempo (mm:ss)
-        function formatTime(seconds) {
-            const min = Math.floor(seconds / 60);
-            const sec = Math.floor(seconds % 60);
-            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-        }
-
-        // Quando a música terminar
+        // When the music ends
         audio.addEventListener('ended', () => {
-            isPlaying = false;
-            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-            progressBar.style.width = '0%';
-            currentTimeEl.textContent = '0:00';
+            if (repeatMode === 'one') {
+                // Repeat the same music
+                audio.currentTime = 0;
+                playSong();
+            } else {
+                nextSong();
+            }
         });
 
-        // Contador de tempo juntos
-        function updateTimeTogether() {
-            const startDate = new Date(2025, 2, 8); // 8 de março de 2025
+        // Init w/ 1st music
+        loadSong(0);
 
+        // sessionStorage to control autoplay
+        if (!sessionStorage.getItem('autoplayAttempted')) {
+            sessionStorage.setItem('autoplayAttempted', 'true');
+            
+            // try autoplay only 1 time per session
+            setTimeout(() => {
+                audio.play()
+                    .then(() => {
+                        isPlaying = true;
+                        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                        musicPlayer.classList.add('playing');
+                    })
+                    .catch(() => {
+                        console.log('Autoplay bloqueado. Clique no play para começar 💕');
+                        playPauseBtn.style.animation = 'pulse 2s infinite';
+                    });
+            }, 1000);
+        } else {
+            console.log('Autoplay já foi tentado nesta sessão');
+            playPauseBtn.style.animation = 'pulse 2s infinite';
+        }
+
+        // Time together counter
+        function updateTimeTogether() {
+            const startDate = new Date(2025, 2, 8);
             const now = new Date();
+
             const diffTime = Math.abs(now - startDate);
 
-            // Calcular anos, meses, dias, etc.
             const years = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
             const months = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
             const days = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
@@ -372,7 +642,6 @@
             const minutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diffTime % (1000 * 60)) / 1000);
 
-            // Atualizar os elementos HTML
             document.getElementById('years').textContent = years;
             document.getElementById('months').textContent = months;
             document.getElementById('days').textContent = days;
@@ -381,55 +650,39 @@
             document.getElementById('seconds').textContent = seconds;
         }
 
-        // Atualizar o contador a cada segundo
         setInterval(updateTimeTogether, 1000);
-        updateTimeTogether(); // Chamar uma vez para inicializar
+        updateTimeTogether();
 
-        // Efeito de corações caindo
-        function createHearts() {
-            const heartsContainer = document.getElementById('hearts');
-            for (let i = 0; i < 20; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('heart');
-                heart.innerHTML = '❤';
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
-                heart.style.animationDelay = Math.random() * 5 + 's';
-                heartsContainer.appendChild(heart);
-            }
-        }
-
-        // Efeito de confete
-        function createConfetti() {
-            const colors = ['#ff6b8b', '#ffd166', '#a8dadc', '#ffffff'];
-
-            for (let i = 0; i < 100; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                confetti.style.animationDelay = Math.random() * 2 + 's';
-                document.body.appendChild(confetti);
-
-                // Remover após a animação
-                setTimeout(() => {
-                    confetti.remove();
-                }, 5000);
-            }
-        }
-
-        // Inicializar efeitos
+        // Init effects
         window.addEventListener('load', () => {
+            createStars();
             createHearts();
 
-            // Iniciar música após um pequeno delay para evitar problemas de autoplay
+            // Try to play music (might be blocked)
             setTimeout(() => {
-                audio.play();
+                audio.play().catch(() => {
+                    console.log('Autoplay bloqueado pelo navegador');
+                });
                 isPlaying = true;
                 playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
             }, 1000);
         });
+
+        // Pause when leaving page
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && isPlaying) {
+                audio.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                isPlaying = false;
+            }
+        });
+
+        // Prevent missclick (zoom)
+        document.addEventListener('touchmove', (e) => {
+            if (e.scale !== 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
     </script>
 </body>
 
