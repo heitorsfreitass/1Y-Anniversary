@@ -12,6 +12,12 @@
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Lib for the days together counter -->
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.30.0/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/plugin/relativeTime.js"></script>
+
 </head>
 
 <body>
@@ -70,9 +76,9 @@
             <div class="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                        <img src="./assets/img/pictures/the-beggining.jpg"
                             alt="Momento especial">
-                        <div class="carousel-caption">Nosso primeiro encontro 💕</div>
+                        <div class="carousel-caption">Onde começou 💕</div>
                     </div>
                     <div class="carousel-item">
                         <img src="https://images.unsplash.com/photo-1516487106395-f3d756f6a367?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -639,30 +645,50 @@
             playPauseBtn.style.animation = 'pulse 2s infinite';
         }
 
-        // Time together counter
-        function updateTimeTogether() {
-            const startDate = new Date(2025, 2, 8);
-            const now = new Date();
+       // Time together counter com Day.js
+function updateTimeTogether() {
+    const startDate = dayjs('2025-03-08 00:00:00'); 
+    const now = dayjs();
 
-            const diffTime = Math.abs(now - startDate);
+    if (now.isBefore(startDate)) {
+        // Zera tudo se ainda não chegou a data inicial
+        ['years', 'months', 'days', 'hours', 'minutes', 'seconds'].forEach(id => {
+            document.getElementById(id).textContent = '0';
+        });
+        return;
+    }
 
-            const years = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
-            const months = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-            const days = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diffTime % (1000 * 60)) / 1000);
+    // Cálculo preciso usando a API do Day.js
+    let tempDate = startDate;
+    
+    const years = now.diff(tempDate, 'year');
+    tempDate = tempDate.add(years, 'year');
 
-            document.getElementById('years').textContent = years;
-            document.getElementById('months').textContent = months;
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
+    const months = now.diff(tempDate, 'month');
+    tempDate = tempDate.add(months, 'month');
 
-        setInterval(updateTimeTogether, 1000);
-        updateTimeTogether();
+    const days = now.diff(tempDate, 'day');
+    tempDate = tempDate.add(days, 'day');
+
+    const hours = now.diff(tempDate, 'hour');
+    tempDate = tempDate.add(hours, 'hour');
+
+    const minutes = now.diff(tempDate, 'minute');
+    tempDate = tempDate.add(minutes, 'minute');
+
+    const seconds = now.diff(tempDate, 'second');
+
+    // Atualiza o DOM
+    document.getElementById('years').textContent = years;
+    document.getElementById('months').textContent = months;
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+}
+
+setInterval(updateTimeTogether, 1000);
+updateTimeTogether();
 
         // Init effects
         window.addEventListener('load', () => {
