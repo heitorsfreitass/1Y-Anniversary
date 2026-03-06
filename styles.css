@@ -334,7 +334,7 @@ p {
 
 .carousel-indicators {
     position: absolute;
-    bottom: 15px;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -545,7 +545,7 @@ p {
     }
     
     .carousel-indicators {
-        bottom: 40px; /* Ajusta posição dos indicadores */
+        bottom: 5px; /* Ajusta posição dos indicadores */
     }
     
     .indicator {
