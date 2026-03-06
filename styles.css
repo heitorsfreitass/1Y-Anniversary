@@ -300,6 +300,62 @@ p {
     transform: translateY(0) scale(0.95);
 }
 
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 77, 109, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.carousel-control:hover {
+    background: rgba(255, 77, 109, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control.prev {
+    left: 15px;
+}
+
+.carousel-control.next {
+    right: 15px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
 /* Responsive Carousel */
 .carousel {
     width: 100%;
@@ -310,26 +366,39 @@ p {
     border-radius: 20px;
     box-shadow: var(--shadow);
     aspect-ratio: 16/9;
+    background: rgba(0, 0, 0, 0.2); /* Fundo para quando a imagem não preencher totalmente */
 }
 
 .carousel-inner {
     display: flex;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;           /* ← ESSENCIAL */
     height: 100%;
+    flex-wrap: nowrap;     /* ← impede quebra de linha */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .carousel-item {
-    min-width: 100%;
+    width: 100%;           /* ← troca min-width por width */
+    min-width: 100%;       /* ← mantém os dois para garantir */
+    flex: 0 0 100%;        /* ← NÃO deixa o item encolher/crescer */
     height: 100%;
     position: relative;
-    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Muda de cover para contain */
     display: block;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-caption {
@@ -344,68 +413,151 @@ p {
     font-size: 1.1rem;
     transform: translateY(100%);
     transition: transform 0.3s ease;
+    pointer-events: none; /* Não interfere com cliques na imagem */
 }
 
 .carousel-item:hover .carousel-caption {
     transform: translateY(0);
 }
 
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+/* Media queries para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+    .carousel {
+        aspect-ratio: 4/3;
+        max-height: 70vh; /* Limita altura máxima */
+    }
+    
+    .carousel-item img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
+    
+    .carousel-caption {
+        font-size: 1rem;
+        padding: 1.5rem 0.8rem 0.8rem;
+        transform: translateY(0); /* Mostra sempre a legenda em mobile */
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    }
+    
+    /* Remove o hover effect em mobile */
+    .carousel-item:hover .carousel-caption {
+        transform: translateY(0);
+    }
 }
 
-.carousel-control:hover {
-    background: var(--primary);
-    transform: translateY(-50%) scale(1.1);
+@media (max-width: 480px) {
+    .carousel {
+        aspect-ratio: 3/4;
+        max-height: 80vh;
+        border-radius: 15px;
+    }
+    
+    .carousel-item {
+        background: rgba(0, 0, 0, 0.4);
+    }
+    
+    .carousel-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: scale-down; /* Garante que a imagem inteira seja visível */
+    }
+    
+    .carousel-caption {
+        font-size: 0.9rem;
+        padding: 1.2rem 0.5rem 0.5rem;
+        line-height: 1.4;
+    }
 }
 
-.carousel-control.prev {
-    left: 20px;
+/* Para telas muito pequenas (menos de 360px) */
+@media (max-width: 360px) {
+    .carousel {
+        aspect-ratio: 2/3;
+    }
+    
+    .carousel-caption {
+        font-size: 0.8rem;
+        padding: 1rem 0.3rem 0.3rem;
+    }
 }
 
-.carousel-control.next {
-    right: 20px;
+/* Para orientação landscape em mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .carousel {
+        aspect-ratio: 16/9;
+        max-height: 80vh;
+    }
+    
+    .carousel-item img {
+        max-height: 70vh;
+    }
 }
 
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 1rem;
+/* Para telas maiores */
+@media (min-width: 1024px) {
+    .carousel {
+        aspect-ratio: 16/9;
+        max-height: 70vh;
+    }
+    
+    .carousel-item img {
+        transition: transform 0.3s ease;
+    }
+    
+    .carousel-item:hover img {
+        transform: scale(1.02);
+    }
 }
 
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+/* Para garantir que imagens muito largas ou altas se ajustem */
+@media (min-aspect-ratio: 16/9) {
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+    }
 }
 
-.indicator.active {
-    background: var(--primary);
-    transform: scale(1.3);
-    border-color: white;
+@media (max-aspect-ratio: 9/16) {
+    .carousel-item img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+/* Ajuste para o controle do carrossel em mobile */
+@media (max-width: 768px) {
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        background: rgba(255, 77, 109, 0.8); /* Mais visível em mobile */
+        opacity: 0.9;
+    }
+    
+    .carousel-control.prev {
+        left: 10px;
+    }
+    
+    .carousel-control.next {
+        right: 10px;
+    }
+    
+    .carousel-indicators {
+        bottom: 40px; /* Ajusta posição dos indicadores */
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+    
+    .indicator.active {
+        background: var(--primary);
+        transform: scale(1.2);
+    }
 }
 
 /* Carta interativa */
