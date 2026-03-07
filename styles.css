@@ -30,97 +30,6 @@ body {
     min-height: 100vh;
     position: relative;
 }
-#passwordModal{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100dvh;
-    background:rgba(0,0,0,0.96);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    z-index:999999999;
-}
-
-.password-card{
-
-    width:90%;
-    max-width:360px;
-
-    background:#1b1b1b;
-    padding:35px 25px;
-
-    border-radius:16px;
-
-    text-align:center;
-    color:white;
-
-    box-shadow:0 10px 40px rgba(0,0,0,0.6);
-}
-
-.password-card h2{
-    margin-bottom:8px;
-}
-
-.password-card p{
-    font-size:14px;
-    opacity:0.8;
-}
-
-#passwordInput{
-
-    width:100%;
-    margin-top:18px;
-
-    padding:14px;
-
-    border-radius:8px;
-    border:none;
-    outline:none;
-
-    font-size:16px;
-
-}
-
-#passwordBtn{
-
-    width:100%;
-    margin-top:14px;
-
-    padding:14px;
-
-    border-radius:8px;
-    border:none;
-
-    background:#ff4d6d;
-    color:white;
-
-    font-size:16px;
-    font-weight:600;
-
-    cursor:pointer;
-}
-
-#passwordBtn:active{
-    transform:scale(0.97);
-}
-
-#passwordError{
-    color:#ff6b6b;
-    margin-top:10px;
-}
-
-/* mobile safe spacing */
-
-@media (max-width:480px){
-
-    .password-card{
-        padding:30px 20px;
-    }
-}
 
 /* Animated stars effect */
 .stars {
@@ -1328,4 +1237,114 @@ footer {
     .carousel-control:active {
         transform: translateY(-50%) scale(0.9);
     }
+}
+
+#passwordModal{
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    background: #000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999999999;
+
+    padding: 20px;
+
+}
+
+.password-card{
+
+    width: 100%;
+    max-width: 360px;
+
+    background: #1b1b1b;
+
+    padding: 35px 25px;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    color: white;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+
+}
+
+.password-card h2{
+
+    margin-bottom:10px;
+
+}
+
+.password-card p{
+
+    font-size:14px;
+    opacity:0.85;
+
+}
+
+#passwordInput{
+
+    width:100%;
+    margin-top:18px;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    border:none;
+    outline:none;
+
+    font-size:16px;
+
+}
+
+#passwordBtn{
+
+    width:100%;
+
+    margin-top:14px;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    border:none;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+#passwordBtn:active{
+
+    transform:scale(0.96);
+
+}
+
+#passwordError{
+
+    color:#ff6b6b;
+
+    margin-top:10px;
+
+}
+
+body.locked{
+    overflow: hidden;
 }
