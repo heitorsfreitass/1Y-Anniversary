@@ -15,17 +15,24 @@
 </head>
 
 <body>
-    <!-- Password Modal -->
-    <div id="passwordModal" class="password-modal">
-        <div class="password-box">
-            <h2>💖 Área Secreta 💖</h2>
-            <p>A senha é o apelido que mais gosto de te chamar</p>
+    <!-- PASSWORD LOCK -->
+    <div id="passwordModal">
+        <div class="password-card">
 
-            <input type="password" id="passwordInput" placeholder="Digite a senha...">
+            <h2>💖 Área Secreta 💖</h2>
+            <p style="margin-top: 15px;">A senha pro seu presente é o seu apelido que eu mais gosto...</p>
+
+            <input 
+                type="password"
+                id="passwordInput"
+                placeholder="Digite a senha"
+                inputmode="numeric"
+            >
 
             <button id="passwordBtn">Entrar</button>
 
-            <p id="passwordError" class="password-error"></p>
+            <p id="passwordError"></p>
+
         </div>
     </div>
 
@@ -884,33 +891,42 @@
         });
 
         // PASSWORD LOCK
+
         const correctPassword = "nataly";
 
-        const passwordModal = document.getElementById("passwordModal");
-        const passwordInput = document.getElementById("passwordInput");
-        const passwordBtn = document.getElementById("passwordBtn");
-        const passwordError = document.getElementById("passwordError");
+        const modal = document.getElementById("passwordModal");
+        const input = document.getElementById("passwordInput");
+        const btn = document.getElementById("passwordBtn");
+        const error = document.getElementById("passwordError");
 
-        function checkPassword(){
-            const value = passwordInput.value.trim();
+        function unlockSite(){
+
+            const value = input.value.trim();
 
             if(value === correctPassword){
-                passwordModal.style.display = "none";
+
+                modal.style.display = "none";
 
                 createConfetti();
                 playSong();
+
             }else{
-                passwordError.textContent = "Senha incorreta 💔";
-                passwordInput.value = "";
+
+                error.textContent = "Senha incorreta 💔";
+                input.value = "";
+
             }
+
         }
 
-        passwordBtn.addEventListener("click", checkPassword);
+        btn.addEventListener("click", unlockSite);
 
-        passwordInput.addEventListener("keydown", function(e){
+        input.addEventListener("keydown", function(e){
+
             if(e.key === "Enter"){
-                checkPassword();
+                unlockSite();
             }
+
         });
     </script>
 </body>
