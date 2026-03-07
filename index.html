@@ -15,6 +15,20 @@
 </head>
 
 <body>
+    <!-- Password Modal -->
+    <div id="passwordModal" class="password-modal">
+        <div class="password-box">
+            <h2>💖 Área Secreta 💖</h2>
+            <p>A senha é o apelido que mais gosto de te chamar</p>
+
+            <input type="password" id="passwordInput" placeholder="Digite a senha...">
+
+            <button id="passwordBtn">Entrar</button>
+
+            <p id="passwordError" class="password-error"></p>
+        </div>
+    </div>
+
     <div class="stars" id="stars"></div>
 
     <!-- Navigation -->
@@ -851,13 +865,13 @@
             createHearts();
 
             // Try to play music (might be blocked)
-            setTimeout(() => {
-                audio.play().catch(() => {
-                    console.log('Autoplay bloqueado pelo navegador');
-                });
-                isPlaying = true;
-                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-            }, 1000);
+            // setTimeout(() => {
+            //     audio.play().catch(() => {
+            //         console.log('Autoplay bloqueado pelo navegador');
+            //     });
+            //     isPlaying = true;
+            //     playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            // }, 1000);
         });
 
         // Pause when leaving page
@@ -866,6 +880,36 @@
                 audio.pause();
                 playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
                 isPlaying = false;
+            }
+        });
+
+        // PASSWORD LOCK
+        const correctPassword = "nataly";
+
+        const passwordModal = document.getElementById("passwordModal");
+        const passwordInput = document.getElementById("passwordInput");
+        const passwordBtn = document.getElementById("passwordBtn");
+        const passwordError = document.getElementById("passwordError");
+
+        function checkPassword(){
+            const value = passwordInput.value.trim();
+
+            if(value === correctPassword){
+                passwordModal.style.display = "none";
+
+                createConfetti();
+                playSong();
+            }else{
+                passwordError.textContent = "Senha incorreta 💔";
+                passwordInput.value = "";
+            }
+        }
+
+        passwordBtn.addEventListener("click", checkPassword);
+
+        passwordInput.addEventListener("keydown", function(e){
+            if(e.key === "Enter"){
+                checkPassword();
             }
         });
     </script>

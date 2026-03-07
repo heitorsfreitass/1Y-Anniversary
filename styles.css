@@ -31,6 +31,63 @@ body {
     position: relative;
 }
 
+.password-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.password-box {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    width: 320px;
+}
+
+.password-box h2{
+    margin-bottom: 10px;
+}
+
+.password-box input{
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.password-box button{
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.password-box button:hover{
+    background: #ff3355;
+}
+
+.password-error{
+    margin-top: 10px;
+    color: #ff6b6b;
+}
+
+body.locked{
+    overflow: hidden;
+}
+
 /* Animated stars effect */
 .stars {
     position: fixed;
