@@ -553,6 +553,32 @@
 
         startAutoPlay();
 
+        // Touch swipe support for mobile/ipad
+        let startX = 0;
+        let endX = 0;
+
+        carouselInner.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            clearInterval(autoPlayInterval);
+        });
+
+        carouselInner.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+        });
+
+        carouselInner.addEventListener('touchend', () => {
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) { // mínimo para ser swipe
+                if (diff > 0) {
+                    nextSlide(); // to the left
+                } else {
+                    prevSlide(); // to the right
+                }
+                resetAutoPlay();
+            }
+        });
+
         // Letter
         const letterBtn = document.getElementById('letter-btn');
         const letter = document.getElementById('letter');
@@ -841,13 +867,6 @@
                 isPlaying = false;
             }
         });
-
-        // Prevent missclick (zoom)
-        document.addEventListener('touchmove', (e) => {
-            if (e.scale !== 1) {
-                e.preventDefault();
-            }
-        }, { passive: false });
     </script>
 </body>
 
