@@ -485,6 +485,7 @@
         });
 
         // Carousel
+        const carousel = document.querySelector('.carousel');
         const carouselInner = document.querySelector('.carousel-inner');
         const carouselItems = document.querySelectorAll('.carousel-item');
         const prevBtn = document.querySelector('.carousel-control.prev');
@@ -557,16 +558,16 @@
         let startX = 0;
         let endX = 0;
 
-        carouselInner.addEventListener('touchstart', (e) => {
+        carousel.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
             clearInterval(autoPlayInterval);
         });
 
-        carouselInner.addEventListener('touchmove', (e) => {
+        carousel.addEventListener('touchmove', (e) => {
             endX = e.touches[0].clientX;
         });
 
-        carouselInner.addEventListener('touchend', () => {
+        carousel.addEventListener('touchend', () => {
             const diff = startX - endX;
 
             if (Math.abs(diff) > 50) { // mínimo para ser swipe
